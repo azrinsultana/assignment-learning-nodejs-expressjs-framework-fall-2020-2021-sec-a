@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>profile</title>
+    <style>
+       .position{
+           position: relative;
+           left: 30%;
+           margin-top: 10%;
+          font-size: large;
+          line-height: 80%;
+       } 
+    </style>
+</head>
+<body>
+    
+    <div class="position">
+    <p><label for="fname">User name:</label><%=user[0].username%><br></p>
+    <p><label for="fname">Name:</label><%=user[0].name%><br></p>
+    <p> <label for="fname">Password:</label><%=user[0].password%><br></p>
+   <p>   <label for="fname">Email:</label><%=user[0].email%><br></p>
+ <p><label for="fname">Address:</label><%=user[0].address%><br></p>
+    
+
+        
+        
+
+			
+			
+			<table>
+				<tr>
+					<td></td>
+                    <td><a href="/user/update/<%=user[0].username%>" >Update</a></td>
+                    <td><a href="/user/<%=user[0].username%>" >Back</a></td>
+				</tr>
+			</table>
+
+
+	
+        </div>
+</body>
+</html>

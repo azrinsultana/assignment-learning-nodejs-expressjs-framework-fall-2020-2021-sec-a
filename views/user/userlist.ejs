@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User List</title>
+</head>
+<body>
+	<h1> Userlist</h1>
+
+	<a href="/home">Back</a> | 
+	<a href="/logout">logout</a> 
+	<br>
+
+	<table border="1">
+		<tr>
+			
+			<td>Username</td>
+			
+            <td>Name</td>
+            <td>Password</td>
+			<td>Email</td>
+			<td>Address</td>
+			<td>Action</td>
+
+			
+		</tr>
+		
+		<!-- <% for(var i=0; i < users.length; i++){ %>
+			
+			<tr>
+				<td><%= users[i][0] %></td>
+				<td><%= users[i][1] %></td>
+				<td><%= users[i][2] %></td>
+				<td><%= users[i][3] %></td>
+				<td><%= users[i][4] %></td>
+			</tr>
+
+		<% } %> -->
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+				
+				<td><%= std.username %></td>
+				<td><%= std.name%></td>
+				<td><%= std.password %></td>
+				<td><%= std.email %></td>
+				<td><%= std.address %></td>
+				<td>
+					<a href="/user/edit/<%= std.username %>">Edit</a> |
+					<a href="/user/delete/<%= std.username %>">Delete</a>
+				</td>
+			</tr>
+		<%
+			}); 
+		%>
+	</table>
+
+</body>
+</html>
