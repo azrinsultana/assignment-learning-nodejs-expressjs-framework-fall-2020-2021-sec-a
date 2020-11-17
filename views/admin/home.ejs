@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+	.table{
+		padding: 10px;
+		margin-top: 20px;
+		text-align: center;
+	}
+	.bold{
+	font-weight: bold;
+	}
+</style>
+</head>
+
+<body>
+<div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+		<a href="#" class="navbar-brand">Brand</a>
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+			  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="/admin/medicinecreate">medicine</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/user/userlist">User</a>
+			  </li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="/logout">logout</a>
+			  </li>
+			<li class="nav-item">
+			  <a class="nav-link" href="/user/create">register</a>
+			</li>
+		
+		  </ul>
+        
+    </nav>
+
+</div>
+
+<table border="1" class="table">
+	<tr>
+		
+		<td class="bold">Medicine Name</td>
+		
+		<td class="bold">Genre</td>
+		<td class="bold">Medicine Type</td>
+		<td class="bold">Vendor Name</td>
+		<td class="bold">Price</td>
+		<td class="bold">Quantity</td>
+		<td class="bold">Action</td>
+
+		
+	</tr>
+	<td>
+		<a href="#">Edit</a> |
+		<a href="#">Delete</a>
+	</td>
+</table>
+
+
+</body>
+</html>

@@ -22,12 +22,13 @@ router.post('/', (req, res)=>{
 
 	userModel.validate(user, function(results){
 		if((results[0].username=="admin")&& (results[0].password==req.body.password)&& (results[0].role==0)){
-			   
+			{ 
             res.cookie('uname', req.body.username);
             
-            userModel.getAll(function(results){
-                res.render('user/userlist', {users: results});
-            });
+        
+                res.render('admin/home');
+			}
+		
 
 
 			//res.render('user/userlist');

@@ -15,6 +15,19 @@ router.get('*',  (req, res, next)=>{
 
 });
 
+router.get('/userlist', (req, res)=>{
+    if(req.cookies['uname'] != null){
+		userModel.getAll(function(results){
+			res.render('user/userlist', {users: results});
+		});
+	}
+	else{
+		res.redirect('/login');
+	}
+	
+});
+
+
 router.get('/:username', (req, res)=>{
     if(req.cookies['uname'] != null){
         var username=req.params.username;
