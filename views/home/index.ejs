@@ -12,7 +12,9 @@
 <link rel="stylesheet" type="text/css" href="/abc/css/style.css">
 </head>
 <body>
-<div class="bs-example">
+ 
+
+
     <nav class="navbar navbar-expand-md navbar-light bg-light">
 	
 		<ul class="navbar-nav">
@@ -30,8 +32,10 @@
 			  </li>
 			<li class="nav-item">
 			  <a class="nav-link" href="/user/create">register</a>
-			</li>
-     
+      </li>
+      
+       
+    
       </ul>
      
         <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -77,24 +81,31 @@
                       
                         
                 </li>
+                <li>
+                  <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+                </li>
             </ul>
+        </div>
+
+        <div class="widget search-widget">
+          <h5>Search</h5>
+          <form class="search-form">
+              <div class="input-group">
+                  <input type="text" placeholder="Search..." id="search" class="form-control">
+                  <div class="input-group-append">
+                      <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                  </div>
+              </div>
+          </form>
         </div>
       
     </nav>
-</div>
-<div class="widget search-widget">
-  <h5>Search</h5>
-  <form class="search-form">
-      <div class="input-group">
-          <input type="text" placeholder="Search..." id="search" class="form-control">
-          <div class="input-group-append">
-              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-          </div>
-      </div>
-  </form>
-</div>
+
+  
+
 
 <div class="container">
+
   
   <div class="row">
     <% 
@@ -112,6 +123,7 @@
     <label > Quantity =<%= std.quantity%></label><br>
 
 <a href="/admin/medicineview/<%= std.id %>" class="btn btn-primary btn-rounded ">View</a>
+<a href="/admin/medicineview/<%= std.id %>" class="btn btn-primary btn-rounded float-right">add</a>
   </div>
 </div>
 
