@@ -1,7 +1,9 @@
 const express 	= require('express');
 const userModel = require.main.require('./models/userModel');
 const router 	= express.Router();
-
+router.get('/create', (req, res)=>{
+	res.render('user/create');
+});
 router.get('*',  (req, res, next)=>{
 	console.log("home");
 	
@@ -59,10 +61,11 @@ router.get('/:username', (req, res)=>{
 });
 
 
-router.get('/create', (req, res)=>{
+
+
+router.get('/register', (req, res)=>{
 	res.render('user/create');
 });
-
 
 router.post('/create', (req, res)=>{
 	

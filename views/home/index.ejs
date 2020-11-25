@@ -9,13 +9,13 @@
 <body>
 <div class="bs-example">
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-		<a href="#" class="navbar-brand">Brand</a>
+	
 		<ul class="navbar-nav">
 			<li class="nav-item active">
 			  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
-			  <a class="nav-link" href="/login">login</a>
+			  <a class="nav-link" href="/login/login">login</a>
 			</li>
 
 			<li class="nav-item">
@@ -41,7 +41,7 @@
                       
 
 
-                        <a href="#" class="dropdown-item">lequid</a>
+                        <a href="#" class="dropdown-item">liquid</a>
                         <a href="#" class="dropdown-item">solid</a>
                        </li>
                            </ul>
@@ -57,7 +57,7 @@
                       
 
 
-                        <a href="#" class="dropdown-item">lequid</a>
+                        <a href="#" class="dropdown-item">liquid</a>
                         <a href="#" class="dropdown-item">solid</a>
                        </li>
                            </ul>
@@ -73,25 +73,33 @@
     </nav>
 </div>
 
+<div class="container">
+  
+  <div class="row">
+    <% 
+  medicine.forEach( function(std){ %>
+ 
+    <div class="col-md-4">
+    
+      <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    
+    <h5 class="card-title"><%= std.medicinename %></h5>
+    <label > <%= std.vendorname %></label><br>
+    <label > <%= std.price %> </label><br>
+    <label > <%= std.quantity%></label><br>
 
-<div class="row">
-  <div class="col-sm-4 mx-auto">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+</div>
+
+  
     </div>
+    <%
+  }); 
+  %>
   </div>
 </div>
 </body>

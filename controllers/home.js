@@ -1,5 +1,5 @@
 const express 	= require('express');
-//const userModel = require.main.require('./models/userModel');
+const adminModel = require.main.require('./models/adminModel');
 const router 	= express.Router();
 /*
 router.get('*',  (req, res, next)=>{
@@ -16,7 +16,12 @@ router.get('*',  (req, res, next)=>{
 });
 */
 router.get('/', (req, res)=>{
-	res.render('home/index');
+	adminModel.getAll(function(results){
+		res.render('home/index', {medicine: results});
+	});
+	   
+	
+
 });
 
 router.get('/feature', (req, res)=>{

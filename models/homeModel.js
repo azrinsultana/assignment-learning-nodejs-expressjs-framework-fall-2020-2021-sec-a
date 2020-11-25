@@ -18,10 +18,10 @@ module.exports= {
 		});
 	},
 
-	*/
-	getById: function(id, callback){
+	
+	getById: function(username, callback){
 		
-var sql="select * from medicinetable where id='"+id+"'";
+var sql="select * from user where username='"+username+"'";
 db.getResults(sql, function(results){
 	if(results.length >0 ){
 		
@@ -33,7 +33,7 @@ db.getResults(sql, function(results){
 });
 
     },
-    
+    */
 	
 	getAll: function(callback){
 		console.log("data");
@@ -46,7 +46,7 @@ db.getResults(sql, function(results){
 		});
 	},
 	
-	
+	/*
 	insert: function(medicine, callback){
 	
 		var sql = "INSERT INTO medicinetable (medicinename,genre,medicinetype,vendorname,price,quantity) VALUES ('"+medicine.medicinename+"', '"+medicine.genre+"','"+medicine.medicinetype+"','"+medicine.vendorname+"','"+medicine.price+"','"+medicine.quantity+"')";
@@ -57,15 +57,15 @@ db.getResults(sql, function(results){
 		});
 	},
 	
-	
-	update:function(medicine, callback){
-var sql="UPDATE medicinetable SET id='"+medicine.id+"',medicinename='"+medicine.medicinename+"',genre='"+medicine.genre+"',medicinetype='"+medicine.medicinetype+"',vendorname='"+medicine.vendorname+"',price='"+medicine.price+"',quantity='"+medicine.quantity+"' WHERE id='"+medicine.id+"' ";
+	/*
+	update:function(user, callback){
+var sql="UPDATE user SET username='"+user.username+"',name='"+user.name+"',password='"+user.password+"',email='"+user.email+"',address='"+user.address+"' WHERE username='"+user.username+"' ";
 console.log(sql);
 db.execute(sql, function(status){
 	callback(status);
 });
 	},
-/*
+
 	delete: function(username, callback){
 var sql="DELETE FROM user WHERE username='"+username+"'";	
 console.log(sql);

@@ -47,42 +47,14 @@
 
 </div>
 
-<table border="1" class="table">
-	<tr>
-		
-		<td class="bold">Medicine Name</td>
-		
-		<td class="bold">Genre</td>
-		<td class="bold">Medicine Type</td>
-		<td class="bold">Vendor Name</td>
-		<td class="bold">Price</td>
-		<td class="bold">Quantity</td>
-		<td class="bold">Action</td>
-
-		
-	</tr>
-	<td>
-		
-		<% 
-			medicine.forEach( function(std){ %>
-			<tr>
-				
-				<td><%= std.medicinename %></td>
-				<td><%= std.genre%></td>
-				<td><%= std.medicinetype %></td>
-				<td><%= std.vendorname %></td>
-				<td><%= std.price %> </td>
-				<td><%= std.quantity%> </td>
-
-				<td>
-					<a href="/admin/medicineedit/<%= std.id %>">Edit</a> |
-					<a href="/admin/medicinedelete/<%= std.id %>">Delete</a>
-				</td>
-			</tr>
-		<%
-			}); 
-		%>
-</table>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
 
 
 </body>

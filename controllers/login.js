@@ -1,16 +1,17 @@
 const express 		= require('express');
 const mysql 	= require('mysql');
 const userModel		= require.main.require('./models/userModel');
+const adminModel = require.main.require('./models/adminModel');
 const router 		= express.Router();
 
 
 
-router.get('/', (req, res)=>{
-	
+router.get('/login', (req, res)=>{
+	//res.render(ho/index);
 	res.render('login/index');
 });
 
-router.post('/', (req, res)=>{
+router.post('/login', (req, res)=>{
 
 	var user = {
 
@@ -25,8 +26,10 @@ router.post('/', (req, res)=>{
 			{ 
             res.cookie('uname', req.body.username);
             
-        
-                res.render('admin/home');
+			adminModel.getAll(function(results){
+				res.render('admin/home', {medicine: results});
+			});
+               
 			}
 		
 
