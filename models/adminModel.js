@@ -72,7 +72,19 @@ console.log(sql);
 		db.execute(sql, function(status){
 			callback(status);
 		});
-    }
+    },
     
-	
+
+	getsearch:function(keyword,callback){
+		var sql='select * from medicinetable where medicinename like "%'+keyword+'%"' ;
+		console.log(sql);
+		db.getResults(sql, function(results){
+			
+				console.log(results);
+				callback(results);
+				
+				
+			
+		});
+			},	
 }

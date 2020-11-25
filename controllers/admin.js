@@ -188,6 +188,49 @@ router.post('/medicinedelet/:id', (req, res)=>{
 	});
 	
 });
+
+router.get('/medicineview/:id', (req, res)=>{
+
+	var id=req.params.id;
+	console.log("admin");
+
+adminModel.getById(id, function(results){
+	
+	
+		if(results.length>0){
+			
+
+			res.render('admin/medicineview',{medicine:results});
+			
+		
+		}
+	
+		else{
+			res.redirect('/login');
+		}
+		
+	});
+
+
+});
+
+
+router.post('/search', (req, res)=>{
+	var keyword=req.body.keyword;
+
+	console.log(keyword);
+	adminModel.getsearch(keyword,function(results){
+		console.log(results);
+		res.json(results);
+
+
+	});
+  //  res.render('blog/bloglist');
+});
+
+
+
+
 module.exports = router;
 
 
