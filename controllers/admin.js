@@ -130,6 +130,31 @@ router.post('/medicineedit/:id', (req, res)=>{
 	});
 	
 });
+
+router.get('/medicinedelete/:id', (req, res)=>{
+
+	var id=req.params.id;
+	console.log("admin");
+
+adminModel.getById(id, function(results){
+	
+	
+		if(results.length>0){
+			
+
+			res.render('admin/medicinedelete',{medicine:results});
+			
+		
+		}
+	
+		else{
+			res.redirect('/login');
+		}
+		
+	});
+
+
+});
 module.exports = router;
 
 

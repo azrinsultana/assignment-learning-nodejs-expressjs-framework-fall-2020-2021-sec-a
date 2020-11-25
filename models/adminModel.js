@@ -65,14 +65,14 @@ db.execute(sql, function(status){
 	callback(status);
 });
 	},
-/*
-	delete: function(username, callback){
-var sql="DELETE FROM user WHERE username='"+username+"'";	
+
+	delete: function(id, callback){
+var sql="DELETE FROM medicinetable WHERE id='"+id+"'";	
 console.log(sql);
 		db.execute(sql, function(status){
 			callback(status);
 		});
     }
-    */
+    
 	
 }
