@@ -155,6 +155,39 @@ adminModel.getById(id, function(results){
 
 
 });
+router.post('/medicinedelet/:id', (req, res)=>{
+	var id=req.params.id;
+		var medicine={
+		id,
+			medicinename:req.body.medicinename,
+			genre:req.body.genre,
+			medicinetype:req.body.medicinetype,
+			vendorname:req.body.vendorname,
+			price:req.body.price,
+			quantity:req.body.quantity
+	
+	
+		};
+		
+		
+	
+
+
+	
+	adminModel.delete(medicine, function(status){
+		if(status){
+            
+            
+            adminModel.getAll(function(results){
+				res.render('admin/medicinelist', {medicine: results});
+				console.log("in");
+            });
+		}else{
+			res.render('user/edit');
+		}
+	});
+	
+});
 module.exports = router;
 
 
