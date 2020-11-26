@@ -5,153 +5,191 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-	.table{
-	
-		padding-left: 5px;
-		padding-right: 5px;;
-		margin-top: 20px;
-		text-align: center;
-	}
-	.bold{
-	font-weight: bold;
-	}
-</style>
-</head>
 
+</head>
 <body>
-<div class="bs-example">
+ 
+
+
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-		<a href="#" class="navbar-brand">Brand</a>
+	
 		<ul class="navbar-nav">
+      
+
 			<li class="nav-item active">
 			  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
-			  <a class="nav-link" href="/admin/medicinecreate">medicine</a>
+			  <a class="nav-link" href="/login/login">login</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/user/userlist">User</a>
-			  </li>
 
 			<li class="nav-item">
 				<a class="nav-link" href="/logout">logout</a>
 			  </li>
 			<li class="nav-item">
 			  <a class="nav-link" href="/user/create">register</a>
-			</li>
-		
-		  </ul>
-		  <!DOCTYPE html>
-		  <html lang="en">
-		  <head>
-		  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-		  <link rel="stylesheet" type="text/css" href="/abc/css/bootstrap.min.css">
-		  <link rel="stylesheet" type="text/css" href="/abc/css/font-awesome.min.css">
-		  <link rel="stylesheet" type="text/css" href="/abc/css/select2.min.css">
-		  <link rel="stylesheet" type="text/css" href="/abc/css/tagsinput.css">
-		  <link rel="stylesheet" type="text/css" href="/abc/css/style.css">
-		  </head>
-		  <body>
-			
-		  <div class="bs-example">
-			  <nav class="navbar navbar-expand-md navbar-light bg-light">
-			  
-				  <ul class="navbar-nav">
-				
-			  <div id="output"> </div>
-					  <li class="nav-item active">
-						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="/login/login">login</a>
-					  </li>
-		  
-					  <li class="nav-item">
-						  <a class="nav-link" href="/logout">logout</a>
-						</li>
-					  <li class="nav-item">
-						<a class="nav-link" href="/user/create">register</a>
-					  </li>
-				 
-				<div class="widget search-widget">
-				  <h5>Search</h5>
-				  <form class="search-form">
-					  <div class="input-group">
-						  <input type="text" placeholder="Search..." id="search" class="form-control">
-						  <div class="input-group-append">
-							  <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-						  </div>
-					  </div>
-				  </form>
-				</div>
-				</ul>
-			   
-				  <div id="navbarCollapse" class="collapse navbar-collapse">
+      </li>
+      
+       
+    
+      
+     
+
+
+
+
+	</li>
+	<li class="nav-item dropdown">
+	  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	 
+	
+
+	  </a>
+
+			<div id="navbarCollapse" class="collapse navbar-collapse">
+		  <ul class="nav navbar-nav">
+			  <li class="nav-item dropdown">
+				  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Medicine</a>
+				  <div class="dropdown-menu">
+
+
+					<div id="navbarCollapse" class="collapse navbar-collapse">
 					  <ul class="nav navbar-nav">
-						  <li class="nav-item dropdown">
-							  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Medicine</a>
-							  <div class="dropdown-menu">
-		  
-		  
-								<div id="navbarCollapse" class="collapse navbar-collapse">
-								  <ul class="nav navbar-nav">
-									<li class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Aspirin</a>
-								
-								
-		  
-		  
-								  <a href="#" class="dropdown-item">liquid</a>
-								  <a href="#" class="dropdown-item">solid</a>
-								 </li>
-								
-									 </ul>
-								</div>
-		  
-								  
-								
-								<div id="navbarCollapse" class="collapse navbar-collapse">
-								  <ul class="nav navbar-nav">
-									<li class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">peracitamal</a>
-								
-								
-		  
-		  
-								  <a href="#" class="dropdown-item">liquid</a>
-								  <a href="#" class="dropdown-item">solid</a>
-								 </li>
-									 </ul>
-								</div>
-		  
-		  
-								
-								
-								  
-						  </li>
-					  </ul>
-				  </div>
+						<li class="nav-item dropdown">
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Aspirin</a>
+					
+					
+
+
+					  <a href="#" class="dropdown-item">liquid</a>
+					  <a href="#" class="dropdown-item">solid</a>
+					 </li>
+					
+						 </ul>
+					</div>
+
+					  
+					
+					<div id="navbarCollapse" class="collapse navbar-collapse">
+					  <ul class="nav navbar-nav">
+						<li class="nav-item dropdown">
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">peracitamal</a>
+					
+					
+
+
+					  <a href="#" class="dropdown-item">liquid</a>
+					  <a href="#" class="dropdown-item">solid</a>
+					 </li>
+						 </ul>
+					</div>
+
+
+					
+					
+					  
+			  </li>
+			  
 				
-			  </nav>
-		  </div>
-		  
+			
+		  </ul>
+	  </div>
+
+    
+      </u>
+        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-shoppoing-cart"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+
+        <div class="widget search-widget">
+          <h5>Search</h5>
+          <form class="search-form">
+              <div class="input-group">
+                  <input type="text" placeholder="Search..." id="search" class="form-control">
+                  <div class="input-group-append">
+                      <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                  </div>
+              </div>
+          </form>
+        </div>
+        <div id="output"> </div>
+      
     </nav>
 
+  
+
+
+<div class="container">
+
+  
+  <div class="row">
+    <% 
+  medicine.forEach( function(std){ %>
+ 
+    <div class="col-md-4">
+    
+      <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    
+    <h5 class="card-title"><%= std.medicinename %></h5>
+    <label >vandor Name :<%= std.vendorname %></label><br>
+    <label >Price =<%= std.price %> tk </label><br>
+    <label > Quantity =<%= std.quantity%></label><br>
+
+<a href="/admin/medicineview/<%= std.id %>" class="btn btn-primary btn-rounded ">View</a>
+<a href="/admin/medicineview/<%= std.id %>" class="btn btn-primary btn-rounded float-right">add</a>
+  </div>
 </div>
 
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  
     </div>
+    <%
+  }); 
+  %>
   </div>
+</div>
 
+<div class="sidebar-overlay" data-reff=""></div>
+<script src="/abc/js/jquery-3.2.1.min.js"></script>
+<script src="/abc/js/popper.min.js"></script>
+<script src="/abc/js/bootstrap.min.js"></script>
+<script src="/abc/js/jquery.slimscroll.js"></script>
+<script src="/abc/js/Chart.bundle.js"></script>
+<script src="/abc/js/chart.js"></script>
+<script src="/abc/js/app.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#search").keyup(function(){
+    var keyword = $(this).val();
+     
+      if (keyword != "") {
+        $.ajax({
+          url: '/admin/search',
+          method: 'POST',
+         
+          data: {keyword:keyword},
+          success: function(results){
+            $("#output").empty(); 
+            results.forEach(myFunction);
 
+function myFunction(blog) {
+
+            document.getElementById("output").innerHTML +=' <a href="/admin/medicineview/'+blog.id+'   ">' +blog.medicinename +'</a>' +" <br>"; 
+            
+        }
+ 
+            
+
+            $("#search").focusin(function(){
+                $('#output').css('display', 'block');
+            });
+          }
+        });
+      } else {
+     
+    }
+  });
+
+    });
+</script>
 </body>
 </html>

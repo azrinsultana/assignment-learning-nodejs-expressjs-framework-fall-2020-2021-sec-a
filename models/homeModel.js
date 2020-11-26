@@ -46,10 +46,19 @@ db.getResults(sql, function(results){
 		});
 	},
 	
-	/*
-	insert: function(medicine, callback){
+	getAllcart: function(callback){
+		
+		var sql = "select * from cart";
+		db.getResults(sql, function(results){
+		callback(results);
+			
+		});
+	},
 	
-		var sql = "INSERT INTO medicinetable (medicinename,genre,medicinetype,vendorname,price,quantity) VALUES ('"+medicine.medicinename+"', '"+medicine.genre+"','"+medicine.medicinetype+"','"+medicine.vendorname+"','"+medicine.price+"','"+medicine.quantity+"')";
+
+	insert: function(cart, callback){
+	
+		var sql = "INSERT INTO cart (medicinename,price) VALUES ('"+cart.medicinename+"','"+cart.price+"')";
 	console.log(sql);
 		db.execute(sql, function(status){
             

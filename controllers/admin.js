@@ -9,6 +9,31 @@ router.get('/create', (req, res)=>{
    });
    
 
+   router.get('/medicineview/:id', (req, res)=>{
+
+	var id=req.params.id;
+	console.log("admin");
+
+adminModel.getById(id, function(results){
+	
+	
+		if(results.length>0){
+			
+
+			res.render('admin/medicineview',{medicine:results});
+			
+		
+		}
+	
+		else{
+			res.redirect('/login');
+		}
+		
+	});
+
+
+});
+
 router.get('*',  (req, res, next)=>{
 	console.log("home");
 	
@@ -189,30 +214,7 @@ router.post('/medicinedelet/:id', (req, res)=>{
 	
 });
 
-router.get('/medicineview/:id', (req, res)=>{
 
-	var id=req.params.id;
-	console.log("admin");
-
-adminModel.getById(id, function(results){
-	
-	
-		if(results.length>0){
-			
-
-			res.render('admin/medicineview',{medicine:results});
-			
-		
-		}
-	
-		else{
-			res.redirect('/login');
-		}
-		
-	});
-
-
-});
 
 
 router.post('/search', (req, res)=>{
