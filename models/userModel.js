@@ -22,6 +22,7 @@ module.exports= {
 	getById: function(username, callback){
 		
 var sql="select * from user where username='"+username+"'";
+console.log(sql);
 db.getResults(sql, function(results){
 	if(results.length >0 ){
 		

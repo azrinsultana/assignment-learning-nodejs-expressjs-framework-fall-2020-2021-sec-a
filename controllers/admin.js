@@ -1,6 +1,7 @@
 const express 	= require('express');
 const userModel = require.main.require('./models/userModel');
 const adminModel = require.main.require('./models/adminModel');
+const homeModel = require.main.require('./models/homeModel');
 const router 	= express.Router();
 
 
@@ -231,7 +232,70 @@ router.post('/search', (req, res)=>{
 });
 
 
+router.get('/cartlist', (req, res)=>{
+	
+var username=req.session.username;
+	//res.render('user/cartlist');
 
+	homeModel.getAllcart(function(value){
+		if(value.length>0){
+	userModel.getById(username,function(results){
+		if(results.length>0){
+		res.render('user/cartlist', {cart: value,user:results});
+	}
+		
+
+
+	});
+			
+	}   
+		
+	});
+	
+
+});
+
+router.get('/cartdelete/:id',(req, res)=>{
+	var id=req.params.id;
+	var username=req.session.username;
+
+	
+	homeModel.delete(id,function(status){
+		if(status){
+
+			userModel.getById(username,function(results){
+				if(results.length>0){
+					console.log("user detauk");
+					console.log(results);
+					//res.render('user/cartlist',{user:results});
+
+
+					homeModel.getAllcart(function(tvalue){
+						if(tvalue.length>0){
+						var total=tvalue.length;
+					
+					
+						res.render('user/cartlist', {cart: tvalue,user:results,total});
+						}
+					});
+					
+
+				
+			}
+				
+		
+		
+			});
+	        //	console.log("cart list updated");
+	//	res.render('user/cartlist', {cart: value});
+
+		
+	}   
+		
+	});
+	
+
+});
 
 module.exports = router;
 

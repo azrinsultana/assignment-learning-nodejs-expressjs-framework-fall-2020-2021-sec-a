@@ -268,4 +268,20 @@ router.post('/update/:username', (req, res)=>{
 });
 
 
+router.get('/cartlist', (req, res)=>{
+	console.log("cart list updated");
+
+	res.render('user/cartlist');
+/*
+	homeModel.getAllcart(function(value){
+		if(value.length>0){
+		console.log("cart list updated");
+			res.render('user/cartlist', {cart: value});
+		
+	}   
+		
+	});
+	*/
+
+});
 module.exports = router;

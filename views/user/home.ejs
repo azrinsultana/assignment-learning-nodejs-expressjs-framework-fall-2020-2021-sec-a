@@ -26,13 +26,48 @@
 			</li>
     
       <li class="nav-item">
-			  <a class="nav-link" href="/user/create">View cart</a>
-			</li>
+			  <a class="nav-link" href="/admin/cartlist">View cart</a>
+      </li>
+      <li>
+        <a href="/admin/cartlist" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i> <span class="badge badge-pill bg-danger float-right"><%=total%></span></a>
+      </li>
       
 		  </ul>
      
     </nav>
 
+</div>
+
+
+<div class="container">
+
+  
+  <div class="row">
+    <% 
+  medicine.forEach( function(std){ %>
+ 
+    <div class="col-md-4">
+    
+      <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    
+    <h5 class="card-title"><%= std.medicinename %></h5>
+    <label >vandor Name :<%= std.vendorname %></label><br>
+    <label >Price =<%= std.price %> tk </label><br>
+    <label > Quantity =<%= std.quantity%></label><br>
+
+<a href="/admin/medicineview/<%= std.id %>" class="btn btn-primary btn-rounded ">View</a>
+<a href="/home/medicinecartadd/<%= std.id %>" class="btn btn-primary btn-rounded float-right">add</a>
+  </div>
+</div>
+
+  
+    </div>
+    <%
+  }); 
+  %>
+  </div>
 </div>
 </body>
 </html>
