@@ -46,6 +46,17 @@ db.getResults(sql, function(results){
 		});
 	},
 	
+	getAllaspirin: function(callback){
+		console.log("data");
+		var sql = "select * from medicinetable where genre='aspirin'";
+		db.getResults(sql, function(results){
+            console.log("all medicine");
+            console.log(results);
+			callback(results);
+			
+		});
+	},
+	
 	
 	insert: function(medicine, callback){
 	
