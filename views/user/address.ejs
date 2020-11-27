@@ -40,43 +40,15 @@
     
     </div>
     
-	<h1> Cart List</h1>
-
+	<h1> Enter address</h1>
+<form method="POST" >
 	
+    <input type="text" name="address" >
 
-	<table border="1">
-		<tr>
-			
-			<td>Medicine Name</td>
-			
-            <td>Price</td>
-            <td>Action</td>
-		
+    <a href="/product/purchase" class="btn btn-primary btn-rounded float-right">Purchase</a>
 
-			
-		</tr>
-		
-	
-
-		<% 
-			cart.forEach( function(std){ %>
-			<tr>
-				
-				<td><%= std.medicinename %></td>
-				<td><%= std.price%></td>
-				
-				<td>
-				
-					<a href="/admin/cartdelete/<%= std.id%>">Delete</a>
-				</td>
-			</tr>
-		<%
-			}); 
-		%>
-    </table>
-    
-
-    <a href="/product/purchase" class="btn btn-primary btn-rounded">Purchase</a>
+        
+</form>
 
 </body>
 </html>

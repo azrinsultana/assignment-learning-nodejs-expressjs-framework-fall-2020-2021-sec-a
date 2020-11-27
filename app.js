@@ -9,6 +9,7 @@ const admin		   		= require('./controllers/admin');
 const logout			= require('./controllers/logout');
 const home				= require('./controllers/home');
 const user				= require('./controllers/user');
+const product				= require('./controllers/product');
 const app				= express();
 const port				= 3000;
 
@@ -29,6 +30,7 @@ app.use('/home', home);
 app.use('/admin',admin);
 app.use('/logout', logout);
 app.use('/user', user);
+app.use('/product', product);
 
 //router
 app.get('/', (req, res)=>{
