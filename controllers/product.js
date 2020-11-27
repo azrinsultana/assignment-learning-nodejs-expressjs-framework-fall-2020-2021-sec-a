@@ -52,4 +52,74 @@ router.get('/purchase',(req, res)=>{
 			});
 });
 
+
+
+
+
+router.get('/address',(req, res)=>{
+	
+	var username=req.session.username;
+
+	
+	
+
+			userModel.getById(username,function(results){
+				if(results.length>0){
+				
+					//res.render('user/cartlist',{user:results});
+
+
+					homeModel.getAllcart(function(tvalue){
+						if(tvalue.length>0){
+						var total=tvalue.length;
+					
+					
+						res.render('user/product', {cart: tvalue,user:results,total});
+						}
+					});
+					
+
+				
+			}
+				
+		
+		
+			});
+});
+
+
+
+
+router.post('/address',(req, res)=>{
+	
+	var username=req.session.username;
+
+	
+	
+
+			userModel.getById(username,function(results){
+				if(results.length>0){
+				
+					//res.render('user/cartlist',{user:results});
+
+
+					homeModel.getAllcart(function(tvalue){
+						if(tvalue.length>0){
+						var total=tvalue.length;
+					
+					
+						res.render('user/product', {cart: tvalue,user:results,total});
+						}
+					});
+					
+
+				
+			}
+				
+		
+		
+			});
+});
+
+
 module.exports = router;
