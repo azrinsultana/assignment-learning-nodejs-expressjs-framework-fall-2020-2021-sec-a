@@ -1,5 +1,7 @@
 const express 	= require('express');
 const userModel = require.main.require('./models/userModel');
+const adminModel = require.main.require('./models/adminModel');
+const homeModel = require.main.require('./models/homeModel');
 const router 	= express.Router();
 router.get('/create', (req, res)=>{
 	res.render('user/create');
@@ -286,6 +288,63 @@ router.get('/cartlist', (req, res)=>{
 });
 
 
+
+
+
+
+
+router.get('/medicinecartadd/:id', (req, res)=>{
+	id=req.params.id;
+	adminModel.getById(id,function(results){
+
+var medicinename=results[0].medicinename;
+
+
+var price=results[0].price;
+var cart={medicinename,price};
+   
+homeModel.insert(cart, function(status){
+		
+	if(status){
+		
+	
+		homeModel.getAllcart(function(value){
+			if(value.length>0){
+			var total=value.length;
+			adminModel.getAll(function(ttotal){
+
+				username=req.session.username;
+				userModel.getById(username, function(results){
+		
+		
+					if(results.length>0){
+						
+			
+						res.render('user/home',{user:results,medicine: ttotal,total});
+						
+					
+					}
+				
+				
+				});
+				//res.render('user/home', {medicine: results,total});
+			});
+		}   
+			
+		});
+		
+	}
+
+
+
+});
+
+		//res.render('home/index', {medicine: results});
+	});
+	   
+
+	//res.render('home/medicine');
+});
 
 
 module.exports = router;

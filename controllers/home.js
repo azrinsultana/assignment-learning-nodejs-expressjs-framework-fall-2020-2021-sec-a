@@ -32,6 +32,8 @@ router.get('/feature', (req, res)=>{
 	res.render('home/medicine');
 });
 
+
+
 router.get('/medicinecartadd/:id', (req, res)=>{
 	id=req.params.id;
 	adminModel.getById(id,function(results){

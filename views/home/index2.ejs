@@ -8,20 +8,27 @@
 
 </head>
 <body>
+  
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+			  <a class="nav-link" href="/login/login">login</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href="/logout">logout</a>
+			  </li>
+			<li class="nav-item">
+			  <a class="nav-link" href="/user/create">register</a>
       </li>
+
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        
@@ -71,16 +78,47 @@
                       
                       
                         
-                </li>
-                
-                  
+                </li>   
               
             </ul>
+          </div>
+      </li>
+
+     
+      <li>
+        <a href="/user/cartlist" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i> <span class="badge badge-pill bg-danger float-right"><%=total%></span></a>
+      </li>
+
+    </ul>
+   
+
+  </div>
+</nav>
+<!---
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
         </div>
-
-
-
-
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
@@ -92,7 +130,95 @@
     </form>
   </div>
 </nav>
+  
+
+-->
+<div class="widget search-widget">
+  <h5>Search</h5>
+  <form class="search-form">
+      <div class="input-group">
+          <input type="text" placeholder="Search..." id="search" class="form-control">
+          <div class="input-group-append">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+          </div>
+      </div>
+  </form>
+</div>
+<div id="output"> </div>
+
+<div class="container">
 
   
+  <div class="row">
+    <% 
+  medicine.forEach( function(std){ %>
+ 
+    <div class="col-md-4">
+    
+      <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    
+    <h5 class="card-title"><%= std.medicinename %></h5>
+    <label >vandor Name :<%= std.vendorname %></label><br>
+    <label >Price =<%= std.price %> tk </label><br>
+    <label > Quantity =<%= std.quantity%></label><br>
+
+<a href="/admin/medicineview/<%= std.id %>" class="btn btn-primary btn-rounded ">View</a>
+<a href="/home/medicinecartadd/<%= std.id %>" class="btn btn-primary btn-rounded float-right">add</a>
+  </div>
+</div>
+
+  
+    </div>
+    <%
+  }); 
+  %>
+  </div>
+</div>
+
+div class="sidebar-overlay" data-reff=""></div>
+<script src="/abc/js/jquery-3.2.1.min.js"></script>
+<script src="/abc/js/popper.min.js"></script>
+<script src="/abc/js/bootstrap.min.js"></script>
+<script src="/abc/js/jquery.slimscroll.js"></script>
+<script src="/abc/js/Chart.bundle.js"></script>
+<script src="/abc/js/chart.js"></script>
+<script src="/abc/js/app.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#search").keyup(function(){
+    var keyword = $(this).val();
+     
+      if (keyword != "") {
+        $.ajax({
+          url: '/admin/search',
+          method: 'POST',
+         
+          data: {keyword:keyword},
+          success: function(results){
+            $("#output").empty(); 
+            results.forEach(myFunction);
+
+function myFunction(blog) {
+
+            document.getElementById("output").innerHTML +=' <a href="/admin/medicineview/'+blog.id+'   ">' +blog.medicinename +'</a>' +" <br>"; 
+            
+        }
+ 
+            
+
+            $("#search").focusin(function(){
+                $('#output').css('display', 'block');
+            });
+          }
+        });
+      } else {
+     
+    }
+  });
+
+    });
+</script>
 </body>
 </html>
